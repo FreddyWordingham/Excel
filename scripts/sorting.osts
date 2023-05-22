@@ -1,5 +1,5 @@
 function main(workbook: ExcelScript.Workbook) {
-    let selectedSheet = workbook.getActiveWorksheet();
+    let selectedSheet = workbook.getWorksheet("Sheet1");
     let table = selectedSheet.addTable("A1:C5", true);
     table.getSort().apply([{ key: 0, ascending: true }]);
 }
