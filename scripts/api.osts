@@ -1,0 +1,12 @@
+async function main(workbook: ExcelScript.Workbook) {
+    let fetchResult = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    let json: JSONData = await fetchResult.json();
+    console.log(JSON.stringify(json));
+}
+
+interface JSONData {
+    userId: number;
+    id: number;
+    title: string;
+    completed: boolean;
+}
