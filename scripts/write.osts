@@ -1,0 +1,21 @@
+function main(workbook: ExcelScript.Workbook) {
+    let target_sheet = "Sheet2";
+    let target_range = "D2:E8";
+
+    let selectedSheet = workbook.getWorksheet(target_sheet);
+    let range = selectedSheet.getRange(target_range);
+
+    let rangeValues = range.getValues();
+    let rowCount = range.getRowCount();
+    let colCount = range.getColumnCount();
+    for (let j = 0; j < colCount; j++) {
+        for (let i = 1; i < rowCount; i++) {
+            if (rangeValues[i][j] != 0) {
+                let positiveValue = Math.abs(rangeValues[i][j] as number);
+                rangeValues[i][j] = positiveValue;
+            }
+        }
+    }
+
+    selectedSheet.getRange(target_range).setValues(rangeValues);
+}
