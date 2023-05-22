@@ -1,0 +1,7 @@
+function main(workbook: ExcelScript.Workbook) {
+    let selectedSheet = workbook.getActiveWorksheet();
+    selectedSheet.getRange("A2:C2").getFormat().getFill().setColor("FFC000");
+    selectedSheet.getRange("A3:C3").getFormat().getFill().setColor("FAFA33");
+    selectedSheet.getRange("A4:C4").getFormat().getFill().setColor("32CD32");
+    selectedSheet.getRange("A4:C4").getFormat().getFill().setColor("fd5956");
+}
