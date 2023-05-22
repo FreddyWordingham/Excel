@@ -1,0 +1,5 @@
+function main(workbook: ExcelScript.Workbook) {
+    let selectedSheet = workbook.getWorksheet("Sheet2");
+    let range = selectedSheet.getRange("D2");
+    console.log(range.getValues());
+}
